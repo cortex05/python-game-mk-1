@@ -50,7 +50,7 @@
   # END SWAMP LOOP METHOD
 
   #START SWAMP OPTIONS FUNCTION ## APPEARS TO BE GENERAL NAVIGATION
-    #  if(position.equals("start")){
+    #  start loop from start position
     #         System.out.println("1 - Proceed North");
     #         System.out.println("2 - Proceed West");
     #         System.out.println("3 - Proceed East");
@@ -71,5 +71,3 @@
     #             System.out.println("Try again");
     #             swampOptions("start", yAxis, xAxis);
     #         }
-    #     }
-
