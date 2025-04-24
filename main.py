@@ -5,16 +5,23 @@
 
 # MAIN FUNCTION START
 
-# Make player variable from HERO type, set type to null
+player = None
 # player changed to result of initial_config
   # INITIAL CONFIG METHOD (Accept player as value)
 
     # scanner?
-    # boolean finished = false
-    # ask for name, input
+player_finished = False
+player_name = input("What is your name?\n")
     # MAKE LOOP
-      # Say Hello
-      # ask for class, offer options for characters or quit
+print(f"\nHello {player_name}")
+character_choice = input('''
+      Please Select your class
+      1) Elf
+      2) Dwarf
+      3) Swordsman
+      4) Quit
+      \n''')
+input(f'''\n You choose {character_choice}. {character_choice} is a [Insert description here]. Do you wish this to be your character?''')
       # for each selection, explain their skills, ask for confirmation, (if not repeat), 
       # if yes, set finished to true
   # END INITIAL CONFIG
