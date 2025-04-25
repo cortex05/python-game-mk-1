@@ -5,15 +5,19 @@
 
 # MAIN FUNCTION START
 
-player = None
+player = {
+  "player_name": None,
+  "player_class": None
+}
 # player changed to result of initial_config
   # INITIAL CONFIG METHOD (Accept player as value)
 
     # scanner?
 player_finished = False
 player_name = input("What is your name?\n")
+player["player_name"] = player_name
     # MAKE LOOP
-print(f"\nHello {player_name}")
+print(f"\nHello {player['player_name']}")
 character_choice = input('''
       Please Select your class
       1) Elf
@@ -21,7 +25,8 @@ character_choice = input('''
       3) Swordsman
       4) Quit
       \n''')
-input(f'''\n You choose {character_choice}. {character_choice} is a [Insert description here]. Do you wish this to be your character?''')
+selection = input(f'''\n You choose {character_choice}. {character_choice} is a [Insert description here]. Do you wish this to be your character? Y/N \n''')
+print(f'You chose {selection}')
       # for each selection, explain their skills, ask for confirmation, (if not repeat), 
       # if yes, set finished to true
   # END INITIAL CONFIG

@@ -7,6 +7,13 @@
 #     public String standardAttack = "Punch";
 #     public String specialAttack = "Drop Kick";
 #     public String heavyAttack = "Roundhouse Kick";
+player = {
+  "player_name": None,
+  "player_class": None,
+  "standard_attack": None,
+  "sepcial_attack": None,
+  "heavy_attack": None
+}
 
 
 #     int health = 100;
