@@ -25,7 +25,21 @@ character_choice = input('''
       3) Swordsman
       4) Quit
       \n''')
+
+# fail check
+print(type(character_choice))
+if type(character_choice) != int:
+  print("Please enter a number\n")
+# make a loop block for this  
+
 selection = input(f'''\n You choose {character_choice}. {character_choice} is a [Insert description here]. Do you wish this to be your character? Y/N \n''')
+character_choice = input('''
+      Please Select your class
+      1) Elf
+      2) Dwarf
+      3) Swordsman
+      4) Quit
+      \n''')
 print(f'You chose {selection}')
       # for each selection, explain their skills, ask for confirmation, (if not repeat), 
       # if yes, set finished to true
