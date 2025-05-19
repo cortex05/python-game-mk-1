@@ -9,6 +9,13 @@ player = {
   "player_name": None,
   "player_class": None
 }
+
+descriptions = [
+  {
+    "name": "Elf",
+    "description": "Description"
+  }
+]
 # player changed to result of initial_config
   # INITIAL CONFIG METHOD (Accept player as value)
 
@@ -27,15 +34,18 @@ while True:
     4) Quit
     \n''')
   
-  print('CHaracter choice ', type(character_choice))
+  print(f"Character choice is {character_choice}")
   # fail check
-  if character_choice == '1' or '2' or '3' or '4':
+  if character_choice == '1' or character_choice == '2' or character_choice == '3':
     selection = input(f'''\n You choose {character_choice}. {character_choice} is a [Insert description here]. Do you wish this to be your character? Y/N \n''')
-    if selection == 'Y':
+    if selection.lower() == 'y':
       print(f'Congrats on picking {character_choice}\n')
       break
     else:
       continue
+  elif character_choice == '4':
+    print("Goodbye")
+    break
   else:
     print("Please enter a number\n")
     continue  
