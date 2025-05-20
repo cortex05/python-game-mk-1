@@ -13,8 +13,16 @@ player = {
 descriptions = [
   {
     "name": "Elf",
-    "description": "Description"
-  }
+    "description": '''a woodland sprite who moves fast and uses magic.'''
+  },
+  {
+    "name": "Dwarf",
+    "description": '''a sturdy, slow-moving tank.'''
+  },
+  {
+    "name": "Swordsman",
+    "description": '''a well balanced fighter.'''
+  },
 ]
 # player changed to result of initial_config
   # INITIAL CONFIG METHOD (Accept player as value)
@@ -33,13 +41,13 @@ while True:
     3) Swordsman
     4) Quit
     \n''')
-  
-  print(f"Character choice is {character_choice}")
-  # fail check
+
+  # selection check
   if character_choice == '1' or character_choice == '2' or character_choice == '3':
-    selection = input(f'''\n You choose {character_choice}. {character_choice} is a [Insert description here]. Do you wish this to be your character? Y/N \n''')
+    proto_selection = descriptions[int(character_choice) - 1]
+    selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
     if selection.lower() == 'y':
-      print(f'Congrats on picking {character_choice}\n')
+      print(f'Congrats on picking {proto_selection["name"]}\n')
       break
     else:
       continue
