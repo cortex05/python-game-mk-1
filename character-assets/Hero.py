@@ -1,34 +1,12 @@
 # THE HERO CLASS
+class Player:
+  total_experience = 0
+  base_level = 1000
+  to_next_level = 1000
 
-# package heroes;
-
-# public class Hero {
-#     public String name = "";
-#     public String standardAttack = "Punch";
-#     public String specialAttack = "Drop Kick";
-#     public String heavyAttack = "Roundhouse Kick";
-class player:
-  "player_name" = None
-  "player_class" = None
-  "standard_attack" = None
-  "sepcial_attack" = None
-  "heavy_attack" = None
-
-
-
-#     int health = 100;
-#     int baseHealth = 100;
-#     int strength = 20;
-#     int defense = 20;
-#     int agility = 20;
-
-#     int numHealthPotions = 4;
-#     int healthPotionHealAmount = 30;
-#     int healthPotionDropChance = 50; // 50 Percent chance to drop a health potion
-#     int levelUpChance = 50;
-
-#     //    LEVEL UP
-#     int baseLevel = 1000;
-#     int toNextLevel = 1000;
-#     int totalExperience = 0;
-# }
+  num_health_potions = 4
+  health_potion_heal_amount = 30
+  health_potion_drop_dhance = 50; # 50 Percent chance to drop a health potion
+  # levelUpChance = 50 - Don't know about this...
+  def __init__(self, name):
+    self.name = name

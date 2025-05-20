@@ -1,7 +1,7 @@
 # Initial attempt to recreate and then improve role playing project
 
 # Import enemy and hero data
-#import necessary functions in java
+# import necessary functions in java
 
 # MAIN FUNCTION START
 

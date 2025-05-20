@@ -14,3 +14,8 @@
 #         agility = 40;
 #     }
 # }
+
+ "player_class" = None
+  "standard_attack" = None
+  "sepcial_attack" = None
+  "heavy_attack" = None
