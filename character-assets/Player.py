@@ -8,5 +8,3 @@ class Player:
   health_potion_heal_amount = 30
   health_potion_drop_dhance = 50; # 50 Percent chance to drop a health potion
   # levelUpChance = 50 - Don't know about this...
-  def __init__(self, name):
-    self.name = name

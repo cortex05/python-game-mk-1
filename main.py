@@ -1,14 +1,29 @@
 # Initial attempt to recreate and then improve role playing project
 
-# Import enemy and hero data
 # import necessary functions in java
 
 # MAIN FUNCTION START
 
-player = {
-  "player_name": None,
-  "player_class": None
-}
+# CHANGE THIS TO IMPORT
+class Player:
+  total_experience = 0
+  base_level = 1000
+  to_next_level = 1000
+
+  num_health_potions = 4
+  health_potion_heal_amount = 30
+  health_potion_drop_dhance = 50; # 50 Percent chance to drop a health potion
+  # levelUpChance = 50 - Don't know about this...
+
+class Swordsman(Player):
+  player_class = "Swordsman"
+  standard_attack = "Slash"
+  special_attack = "Overhead Smash"
+  heavy_attack = "Thrust"
+  description = '''a well balanced fighter.'''
+  def __init__(self, name):
+    self.name = name
+    print(f"\nSwordsman Selected! Hack and slash it is. Congrats {name}!\n\n\n")
 
 descriptions = [
   {
@@ -24,15 +39,14 @@ descriptions = [
     "description": '''a well balanced fighter.'''
   },
 ]
-# player changed to result of initial_config
-  # INITIAL CONFIG METHOD (Accept player as value)
-
-    # scanner?
+# END IMPORT SECTION
+# INITIAL CONFIG METHOD (Accept player as value)
+player = ''
 player_finished = False
 player_name = input("What is your name?\n")
-player["player_name"] = player_name
-    # MAKE LOOP
-print(f"\nHello {player['player_name']}")
+
+print(f"\nHello {player_name}")
+
 while True:
   character_choice = input('''
     Please Select your class
@@ -43,11 +57,19 @@ while True:
     \n''')
 
   # selection check
-  if character_choice == '1' or character_choice == '2' or character_choice == '3':
+  if character_choice == '1' or character_choice == '2':
     proto_selection = descriptions[int(character_choice) - 1]
     selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
     if selection.lower() == 'y':
-      print(f'Congrats on picking {proto_selection["name"]}\n')
+      print(f'Congrats on picking {proto_selection["name"]}\n\n\n')
+      break
+    else:
+      continue
+  elif  character_choice == '3':
+    proto_selection = descriptions[int(character_choice) - 1]
+    selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
+    if selection.lower() == 'y':
+      player = Swordsman(player_name)
       break
     else:
       continue
@@ -55,13 +77,10 @@ while True:
     print("Goodbye")
     break
   else:
-    print("Please enter a number\n")
+    print("Please enter a valid number\n")
     continue  
-  
- 
 
-      # for each selection, explain their skills, ask for confirmation, (if not repeat), 
-      # if yes, set finished to true
+  # if yes, set finished to true
   # END INITIAL CONFIG
 
 # Do intro scroll 
