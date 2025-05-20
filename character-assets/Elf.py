@@ -1,21 +1,18 @@
 # ELF 
+from Player import Player
 
-# public class Elf extends Hero{
-#     public Elf (){
-#         standardAttack = "Swipes";
-#         specialAttack = "Precision Arrow";
-#         heavyAttack = "Double Stab";
+class Elf(Player):
+  player_class = "Elf"
+  standard_attack = "Swipes"
+  special_attack = "Precision Arrow"
+  heavy_attack = "Drop Kick"
+  description = '''a well balanced fighter.'''
 
-
-#         health = 70;
-#         baseHealth = 70;
-#         strength = 18;
-#         defense = 18;
-#         agility = 40;
-#     }
-# }
-
- "player_class" = None
-  "standard_attack" = None
-  "sepcial_attack" = None
-  "heavy_attack" = None
+  health = 70
+  baseHealth = 70
+  strength = 18
+  defense = 18
+  agility = 40
+  def __init__(self, name):
+    self.name = name
+    print(f"\nElf Selected! Quick and nimble is the way. Congrats {name}!\n\n\n")
