@@ -2,6 +2,7 @@
 
 # import necessary functions in java
 import Dwarf
+import characters.Elf
 # MAIN FUNCTION START
 
 # CHANGE THIS TO IMPORT
@@ -24,22 +25,6 @@ class Swordsman(Player):
   def __init__(self, name):
     self.name = name
     print(f"\nSwordsman Selected! Hack and slash it is. Congrats {name}!\n\n\n")
-
-class Elf(Player):
-  player_class = "Elf"
-  standard_attack = "Swipes"
-  special_attack = "Precision Arrow"
-  heavy_attack = "Drop Kick"
-  description = '''a well balanced fighter.'''
-
-  health = 70
-  baseHealth = 70
-  strength = 18
-  defense = 18
-  agility = 40
-  def __init__(self, name):
-    self.name = name
-    print(f"\nElf Selected! Quick and nimble is the way. Congrats {name}!\n\n\n")    
 
 descriptions = [
   {
@@ -79,7 +64,7 @@ def initialiationLoop(name):
       proto_selection = descriptions[int(character_choice) - 1]
       selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
       if selection.lower() == 'y':
-        player = Elf(name)
+        player = characters.Elf.Elf(name)
         break
       else:
         continue
