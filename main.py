@@ -25,6 +25,38 @@ class Swordsman(Player):
     self.name = name
     print(f"\nSwordsman Selected! Hack and slash it is. Congrats {name}!\n\n\n")
 
+class Elf(Player):
+  player_class = "Elf"
+  standard_attack = "Swipes"
+  special_attack = "Precision Arrow"
+  heavy_attack = "Drop Kick"
+  description = '''a well balanced fighter.'''
+
+  health = 70
+  baseHealth = 70
+  strength = 18
+  defense = 18
+  agility = 40
+  def __init__(self, name):
+    self.name = name
+    print(f"\nElf Selected! Quick and nimble is the way. Congrats {name}!\n\n\n")    
+
+class Dwarf(Player):
+  player_class = "Dwarf"
+  standard_attack = "Slash"
+  special_attack = "Earth shaker"
+  heavy_attack = "Guillotine"
+  description = '''a well balanced fighter.'''
+
+  health = 120
+  baseHealth = 120
+  strength = 50
+  defense = 30
+  agility = 15
+  def __init__(self, name):
+    self.name = name
+    print(f"\nDwarf Selected! Heavy hitter I see. Congrats {name}!\n\n\n")
+
 descriptions = [
   {
     "name": "Elf",
@@ -41,14 +73,16 @@ descriptions = [
 ]
 # END IMPORT SECTION
 # INITIAL CONFIG METHOD (Accept player as value)
-player = ''
+
 player_finished = False
-player_name = input("What is your name?\n")
+player_name = input("Please enter your name.\n")
 
 print(f"\nHello {player_name}")
 
-while True:
-  character_choice = input('''
+def initialiationLoop(name):
+  player = ''
+  while True:
+    character_choice = input('''
     Please Select your class
     1) Elf
     2) Dwarf
@@ -57,31 +91,47 @@ while True:
     \n''')
 
   # selection check
-  if character_choice == '1' or character_choice == '2':
-    proto_selection = descriptions[int(character_choice) - 1]
-    selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
-    if selection.lower() == 'y':
-      print(f'Congrats on picking {proto_selection["name"]}\n\n\n')
+    if character_choice == '1':
+      proto_selection = descriptions[int(character_choice) - 1]
+      selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
+      if selection.lower() == 'y':
+        player = Elf(name)
+        break
+      else:
+        continue
+    elif  character_choice == '2':
+      proto_selection = descriptions[int(character_choice) - 1]
+      selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
+      if selection.lower() == 'y':
+        player = Dwarf(name)
+        break
+      else:
+        continue
+    elif  character_choice == '3':
+      proto_selection = descriptions[int(character_choice) - 1]
+      selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
+      if selection.lower() == 'y':
+        player = Swordsman(name)
+        break
+      else:
+        continue
+    elif character_choice == '4':
+      print("Goodbye")
       break
     else:
-      continue
-  elif  character_choice == '3':
-    proto_selection = descriptions[int(character_choice) - 1]
-    selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
-    if selection.lower() == 'y':
-      player = Swordsman(player_name)
-      break
-    else:
-      continue
-  elif character_choice == '4':
-    print("Goodbye")
-    break
-  else:
-    print("Please enter a valid number\n")
-    continue  
+      print("Please enter a valid number\n")
+      continue  
 
+  return player
   # if yes, set finished to true
   # END INITIAL CONFIG
+
+
+player = initialiationLoop(player_name)
+print(player.standard_attack)
+if player == '':
+  player_finished = True
+
 
 # Do intro scroll 
   # INTRO SCROLL METHOD
