@@ -1,30 +1,10 @@
 # Initial attempt to recreate and then improve role playing project
 
 # import necessary functions in java
-import Dwarf
-import characters.Elf
+import characters
 # MAIN FUNCTION START
 
 # CHANGE THIS TO IMPORT
-class Player:
-  total_experience = 0
-  base_level = 1000
-  to_next_level = 1000
-
-  num_health_potions = 4
-  health_potion_heal_amount = 30
-  health_potion_drop_dhance = 50; # 50 Percent chance to drop a health potion
-  # levelUpChance = 50 - Don't know about this...
-
-class Swordsman(Player):
-  player_class = "Swordsman"
-  standard_attack = "Slash"
-  special_attack = "Overhead Smash"
-  heavy_attack = "Thrust"
-  description = '''a well balanced fighter.'''
-  def __init__(self, name):
-    self.name = name
-    print(f"\nSwordsman Selected! Hack and slash it is. Congrats {name}!\n\n\n")
 
 descriptions = [
   {
@@ -72,7 +52,7 @@ def initialiationLoop(name):
       proto_selection = descriptions[int(character_choice) - 1]
       selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
       if selection.lower() == 'y':
-        player = Dwarf.Dwarf(name)
+        player = characters.Dwarf.Dwarf(name)
         break
       else:
         continue
@@ -80,7 +60,7 @@ def initialiationLoop(name):
       proto_selection = descriptions[int(character_choice) - 1]
       selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
       if selection.lower() == 'y':
-        player = Swordsman(name)
+        player = characters.Swordsman.Swordsman(name)
         break
       else:
         continue
@@ -97,7 +77,7 @@ def initialiationLoop(name):
 
 
 player = initialiationLoop(player_name)
-print(player.standard_attack)
+
 if player == '':
   player_finished = True
 
