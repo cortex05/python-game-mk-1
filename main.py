@@ -1,7 +1,7 @@
 # Initial attempt to recreate and then improve role playing project
 
 # import necessary functions in java
-
+import Dwarf
 # MAIN FUNCTION START
 
 # CHANGE THIS TO IMPORT
@@ -40,22 +40,6 @@ class Elf(Player):
   def __init__(self, name):
     self.name = name
     print(f"\nElf Selected! Quick and nimble is the way. Congrats {name}!\n\n\n")    
-
-class Dwarf(Player):
-  player_class = "Dwarf"
-  standard_attack = "Slash"
-  special_attack = "Earth shaker"
-  heavy_attack = "Guillotine"
-  description = '''a well balanced fighter.'''
-
-  health = 120
-  baseHealth = 120
-  strength = 50
-  defense = 30
-  agility = 15
-  def __init__(self, name):
-    self.name = name
-    print(f"\nDwarf Selected! Heavy hitter I see. Congrats {name}!\n\n\n")
 
 descriptions = [
   {
@@ -103,7 +87,7 @@ def initialiationLoop(name):
       proto_selection = descriptions[int(character_choice) - 1]
       selection = input(f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
       if selection.lower() == 'y':
-        player = Dwarf(name)
+        player = Dwarf.Dwarf(name)
         break
       else:
         continue
