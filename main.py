@@ -3,12 +3,9 @@ from utility import start
 # END IMPORT SECTION
 
 # INITIAL CONFIG METHOD (Accept player as value)
-player_finished = False
-player_name = input("Please enter your name.\n")
+player = start.initialiationLoop(start.setPlayerName())
 
-print(f"\nHello {player_name}")
-
-player = start.initialiationLoop(player_name)
+start.introScroll()
 
 if player == '':
   player_finished = True

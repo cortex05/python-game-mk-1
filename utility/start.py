@@ -1,5 +1,15 @@
 import characters
+from threading import Timer
 
+# Set Name
+def setPlayerName():
+  player_name = input("Please enter your name.\n")
+
+  print(f"\nHello {player_name}")
+
+  return player_name
+
+# Initialization
 descriptions = [
   {
     "name": "Elf",
@@ -63,3 +73,18 @@ def initialiationLoop(name):
     continue
       
   return player
+
+# Intro scroll
+introScrollText = [
+  'this is the intro scroll',
+  'testing width',
+  'and time'
+]
+
+# def displayText(stanza: str):
+#   print(stanza)
+
+def introScroll():
+  for text in introScrollText:
+    input(f'{text} \n')  
+  
