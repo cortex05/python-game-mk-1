@@ -1,21 +1,9 @@
 from utility import start
 
-# END IMPORT SECTION
-
-# INITIAL CONFIG METHOD (Accept player as value)
+# INITIALIZE CHARACTER
 player = start.initialiationLoop(start.setPlayerName())
 
 start.introScroll()
-
-if player == '':
-  player_finished = True
-
-
-# Do intro scroll 
-  # INTRO SCROLL METHOD
-    # initialize name
-    # give the spiel
-  # END SWAMP LOOP
 
 # start sawmp loop
   # START LOOP METHOD ( player as argument)
