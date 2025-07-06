@@ -15,4 +15,4 @@ class Elf(Player):
   agility = 40
   def __init__(self, name):
     self.name = name
-    print(f"\nElf Selected! Quick and nimble is the way. Congrats {name}!\n\n\n")
+    input(f"\n Elf Selected! Quick and nimble is the way. Congrats {name}!\n Press any key to continue\n\n")

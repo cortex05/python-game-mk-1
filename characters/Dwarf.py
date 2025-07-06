@@ -14,4 +14,4 @@ class Dwarf(Player):
   agility = 15
   def __init__(self, name):
     self.name = name
-    print(f"\nDwarf Selected! Heavy hitter I see. Congrats {name}!\n\n\n")
+    input(f"\n Dwarf Selected! Heavy hitter I see. Congrats {name}!\n Press any key to continue\n\n")

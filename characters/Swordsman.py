@@ -15,4 +15,4 @@ class Swordsman(Player):
   agility = 20
   def __init__(self, name):
     self.name = name
-    print(f"\nSwordsman Selected! Hack and slash it is. Congrats {name}!\n\n\n")
+    input(f"\n Swordsman Selected! Hack and slash it is. Congrats {name}!\n Press any key to continue\n\n")

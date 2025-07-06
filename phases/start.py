@@ -63,7 +63,8 @@ def initialiationLoop(name):
           continue
       elif character_choice == 4:
         print("Goodbye")
-        break
+        return
+        # break
       else:
         print("Please enter a whole number between 0 and 5\n")
         continue  
@@ -71,7 +72,7 @@ def initialiationLoop(name):
     except ValueError:
       print("Please enter a number")
     continue
-      
+  introScroll()    
   return player
 
 # Intro scroll

@@ -1,9 +1,9 @@
-from utility import start
+from phases import start
 
 # INITIALIZE CHARACTER
 player = start.initialiationLoop(start.setPlayerName())
 
-start.introScroll()
+print("Done!!")
 
 # start sawmp loop
   # START LOOP METHOD ( player as argument)
