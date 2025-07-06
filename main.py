@@ -1,7 +1,13 @@
-from phases import start
+from phases import start, swamp
 
 # INITIALIZE CHARACTER
 player = start.initialiationLoop(start.setPlayerName())
+
+if player:
+  start.introScroll(player.name)
+  swamp.swampLoop(player)
+else:
+  print('end')
 
 print("Done!!")
 

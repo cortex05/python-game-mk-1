@@ -72,20 +72,19 @@ def initialiationLoop(name):
     except ValueError:
       print("Please enter a number")
     continue
-  introScroll()    
+
   return player
 
 # Intro scroll
-introScrollText = [
-  'this is the intro scroll',
-  'testing width',
-  'and time'
+
+def introScroll(name: str):
+  introScrollText = [
+  f'Hello {name}. this is the intro scroll.',
+  'You are starting on an adventure.',
+  'You have to fight through a swamp, cross a moat and enter a castle.',
+  'After that, you must find the princess somewhere in the castle.',
+  'Take heart, do not despair and step out with determination!'
 ]
-
-# def displayText(stanza: str):
-#   print(stanza)
-
-def introScroll():
   for text in introScrollText:
     input(f'{text} \n')  
   
