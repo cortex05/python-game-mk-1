@@ -1,5 +1,8 @@
-class Godmother():
+from Enemy import Enemy
+
+class Godmother(Enemy):
   name = "Fairy Godmother"
+  name_tense = "A Godmother"
   max_enemy_health = 20
   enemy_attack_damage = 80
   special_attack = "Curses"

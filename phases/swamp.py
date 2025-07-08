@@ -1,6 +1,6 @@
 import random
 from characters import Player
-from enemy_assets import Donkey, Dragon, Godmother, Farquad
+from utility import swamp_functions
 
 
 def swampLoop(player: Player):
@@ -11,19 +11,11 @@ def swampLoop(player: Player):
   }
 
   while is_running:
-    enemy_selector = random.randint(4,4)
-    enemy = None
+    enemy = swamp_functions.random_enemy()
+    print(f'{enemy.name_tense} appeared!\n')
 
-    if(enemy_selector == 1):
-      enemy = Donkey.Donkey()
-    elif(enemy_selector == 2):
-      enemy = Dragon.Dragon()
-    elif(enemy_selector == 3):
-      enemy = Godmother.Godmother()
-    elif(enemy_selector == 4):
-      enemy = Farquad.Farquad()
+    swamp_functions.battle_loop(player, enemy)
 
-    print(f'A {enemy.name} appeared!')
 
     return
   
