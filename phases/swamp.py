@@ -1,11 +1,9 @@
 import random
 from characters import Player
-import enemy_assets
-import enemy_assets.Farquad
-import enemy_assets.Godmother
+from enemy_assets import Donkey, Dragon, Godmother, Farquad
+
 
 def swampLoop(player: Player):
-    # Call swampOptions with "start" and position variables
   is_running = True
   nav_coord = {
     "x_val": 0,
@@ -17,13 +15,13 @@ def swampLoop(player: Player):
     enemy = None
 
     if(enemy_selector == 1):
-      enemy = enemy_assets.Donkey.Donkey()
+      enemy = Donkey.Donkey()
     elif(enemy_selector == 2):
-      enemy = enemy_assets.Dragon.Dragon()
+      enemy = Dragon.Dragon()
     elif(enemy_selector == 3):
-      enemy = enemy_assets.Godmother.Godmother()
+      enemy = Godmother.Godmother()
     elif(enemy_selector == 4):
-      enemy = enemy_assets.Farquad.Farquad()
+      enemy = Farquad.Farquad()
 
     print(f'A {enemy.name} appeared!')
 
