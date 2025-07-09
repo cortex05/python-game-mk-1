@@ -1,62 +1,65 @@
 from phases import start, swamp
 
 # INITIALIZE CHARACTER
+
+
 def do_stuff(num):
-  return num + 5
+    return num + 5
+
 
 player = start.initialiationLoop(start.setPlayerName())
 
 if player:
-  start.introScroll(player.name)
-  swamp.swampLoop(player)
+    start.introScroll(player.name)
+    swamp.swampLoop(player)
 else:
-  print('end')
+    print('end')
 
 print("Done!!")
 
 # start sawmp loop
-  # START LOOP METHOD ( player as argument)
-    # isRunning Boolean
-    # Initial position variables
-    # Call swampOptions with "start" and position variables
-    # Loop while "isRunning"
-  
-    # END OF ORIGINAL
-      # PLANS
-        # PART 1
-        # Have 4 sections that involve navigation
-        # --swamp, gate, mordor, baradur
-        # Have random battles with level up mechanic
-        # --progressive difficulty
-        # Final Boss
-        # --special features?
+# START LOOP METHOD ( player as argument)
+# isRunning Boolean
+# Initial position variables
+# Call swampOptions with "start" and position variables
+# Loop while "isRunning"
 
-        # PART 2
-        # Inventory
-        # --WEAPONS and armor
-        # Locations that have buttons
-        # --Button opens up switch
-  # END SWAMP LOOP METHOD
+# END OF ORIGINAL
+# PLANS
+# PART 1
+# Have 4 sections that involve navigation
+# --swamp, gate, mordor, baradur
+# Have random battles with level up mechanic
+# --progressive difficulty
+# Final Boss
+# --special features?
 
-  #START SWAMP OPTIONS FUNCTION ## APPEARS TO BE GENERAL NAVIGATION
-    #  start loop from start position
-    #         System.out.println("1 - Proceed North");
-    #         System.out.println("2 - Proceed West");
-    #         System.out.println("3 - Proceed East");
+# PART 2
+# Inventory
+# --WEAPONS and armor
+# Locations that have buttons
+# --Button opens up switch
+# END SWAMP LOOP METHOD
 
-    #         String option = in.nextLine();
+# START SWAMP OPTIONS FUNCTION ## APPEARS TO BE GENERAL NAVIGATION
+#  start loop from start position
+#         System.out.println("1 - Proceed North");
+#         System.out.println("2 - Proceed West");
+#         System.out.println("3 - Proceed East");
 
-    #         if(option.equalsIgnoreCase("1")){
-    #             System.out.println("You proceed North");
-    #             yAxis = yAxis + 1;
-    #             System.out.println(yAxis);
-    #         } else if (option.equalsIgnoreCase("2")){
-    #             System.out.println("You Proceed west");
-    #             xAxis--;
-    #         } else if(option.equalsIgnoreCase("3")){
-    #             System.out.println("You proceed east");
-    #             xAxis++;
-    #         } else {
-    #             System.out.println("Try again");
-    #             swampOptions("start", yAxis, xAxis);
-    #         }
+#         String option = in.nextLine();
+
+#         if(option.equalsIgnoreCase("1")){
+#             System.out.println("You proceed North");
+#             yAxis = yAxis + 1;
+#             System.out.println(yAxis);
+#         } else if (option.equalsIgnoreCase("2")){
+#             System.out.println("You Proceed west");
+#             xAxis--;
+#         } else if(option.equalsIgnoreCase("3")){
+#             System.out.println("You proceed east");
+#             xAxis++;
+#         } else {
+#             System.out.println("Try again");
+#             swampOptions("start", yAxis, xAxis);
+#         }
