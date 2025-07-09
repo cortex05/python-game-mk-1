@@ -1,4 +1,4 @@
-import characters
+from characters import Elf, Dwarf, Swordsman
 from threading import Timer
 
 # Set Name
@@ -46,7 +46,7 @@ def initialiationLoop(name):
                 selection = input(
                     f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
                 if selection.lower() == 'y':
-                    player = characters.Elf.Elf(name)
+                    player = Elf.Elf(name)
                     break
                 else:
                     continue
@@ -55,7 +55,7 @@ def initialiationLoop(name):
                 selection = input(
                     f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
                 if selection.lower() == 'y':
-                    player = characters.Dwarf.Dwarf(name)
+                    player = Dwarf.Dwarf(name)
                     break
                 else:
                     continue
@@ -64,7 +64,7 @@ def initialiationLoop(name):
                 selection = input(
                     f'''\nYou choose {proto_selection["name"]}. \n \n{proto_selection["name"]} is {proto_selection["description"]}. \n \nDo you wish this to be your character? Y/N \n''')
                 if selection.lower() == 'y':
-                    player = characters.Swordsman.Swordsman(name)
+                    player = Swordsman.Swordsman(name)
                     break
                 else:
                     continue

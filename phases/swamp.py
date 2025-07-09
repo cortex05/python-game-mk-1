@@ -1,5 +1,5 @@
 import random
-from characters import Player
+from Player import Player
 from utility import swamp_functions
 
 

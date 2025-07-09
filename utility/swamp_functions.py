@@ -1,6 +1,6 @@
 import random
 from Enemy import Enemy
-from characters import Player
+from Player import Player
 from enemy_assets import Donkey, Dragon, Godmother, Farquad
 
 
