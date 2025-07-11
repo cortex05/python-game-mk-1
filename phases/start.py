@@ -1,5 +1,6 @@
 from characters import Elf, Dwarf, Swordsman
 from threading import Timer
+import os
 
 # Set Name
 
@@ -93,5 +94,7 @@ def introScroll(name: str):
         'After that, you must find the princess somewhere in the castle.',
         'Take heart, do not despair and step out with determination!'
     ]
+    os.system('cls')
     for text in introScrollText:
         input(f'{text} \n')
+    os.system('cls')
