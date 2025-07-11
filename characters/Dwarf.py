@@ -1,3 +1,4 @@
+import os
 from Player import Player
 
 
@@ -16,5 +17,6 @@ class Dwarf(Player):
 
     def __init__(self, name):
         self.name = name
+        os.system('cls')
         input(
             f"\n Dwarf Selected! Heavy hitter I see. Congrats {name}!\n Press any key to continue\n\n")

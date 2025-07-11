@@ -8,6 +8,7 @@ import os
 def setPlayerName():
     player_name = input("Please enter your name.\n")
 
+    os.system('cls')
     print(f"\nHello {player_name}")
 
     return player_name
@@ -50,6 +51,7 @@ def initialiationLoop(name):
                     player = Elf.Elf(name)
                     break
                 else:
+                    os.system('cls')
                     continue
             elif character_choice == 2:
                 proto_selection = descriptions[int(character_choice) - 1]
@@ -59,6 +61,7 @@ def initialiationLoop(name):
                     player = Dwarf.Dwarf(name)
                     break
                 else:
+                    os.system('cls')
                     continue
             elif character_choice == 3:
                 proto_selection = descriptions[int(character_choice) - 1]
@@ -68,16 +71,19 @@ def initialiationLoop(name):
                     player = Swordsman.Swordsman(name)
                     break
                 else:
+                    os.system('cls')
                     continue
             elif character_choice == 4:
                 print("Goodbye")
                 return
                 # break
             else:
+                os.system('cls')
                 print("Please enter a whole number between 0 and 5\n")
                 continue
 
         except ValueError:
+            os.system('cls')
             print("Please enter a number")
         continue
 

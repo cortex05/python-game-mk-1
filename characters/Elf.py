@@ -1,5 +1,6 @@
 # ELF
 from Player import Player
+import os
 
 
 class Elf(Player):
@@ -17,5 +18,6 @@ class Elf(Player):
 
     def __init__(self, name):
         self.name = name
+        os.system('cls')
         input(
             f"\n Elf Selected! Quick and nimble is the way. Congrats {name}!\n Press any key to continue\n\n")
