@@ -1,3 +1,4 @@
+import os
 from phases import start, swamp
 
 # INITIALIZE CHARACTER
@@ -6,7 +7,7 @@ from phases import start, swamp
 def do_stuff(num):
     return num + 5
 
-
+os.system('cls')
 player = start.initialiationLoop(start.setPlayerName())
 
 if player:
