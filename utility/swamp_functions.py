@@ -1,3 +1,4 @@
+import os
 import random
 from Enemy import Enemy
 from Player import Player
@@ -8,19 +9,19 @@ def random_enemy():
     enemy_selector = random.randint(1, 4)
     enemy = None
 
-    if (enemy_selector == 1):
+    if enemy_selector == 1:
         enemy = Donkey.Donkey()
-    elif (enemy_selector == 2):
+    elif enemy_selector == 2:
         enemy = Dragon.Dragon()
-    elif (enemy_selector == 3):
+    elif enemy_selector == 3:
         enemy = Godmother.Godmother()
-    elif (enemy_selector == 4):
+    elif enemy_selector == 4:
         enemy = Farquad.Farquad()
 
     return enemy
 
 
-def battle_loop(player: Player, enemy: Enemy):
+def battle_loop(player, enemy):
     while True:
         print(f'What will {player.name} do?\n')
         selection = int(input(
@@ -40,12 +41,14 @@ def battle_loop(player: Player, enemy: Enemy):
                     print('You stand strong.\n\n')
                 else:
                     print('You are defeated!')
-                    break
+                    return False, player
             else:
+                os.system('cls')
                 print(f'The {enemy.name} is defeated!')
-                break
+                return True, player
         elif selection == 4:
             print('Bye\n')
             break
         else:
             print('')
+    

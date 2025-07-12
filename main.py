@@ -12,7 +12,7 @@ player = start.initialiationLoop(start.setPlayerName())
 
 if player:
     start.introScroll(player.name)
-    swamp.swampLoop(player)
+    swamp.swamp_loop(player)
 else:
     print('end')
 
