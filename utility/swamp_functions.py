@@ -3,6 +3,7 @@ import random
 from Enemy import Enemy
 from Player import Player
 from enemy_assets import Donkey, Dragon, Godmother, Farquad
+from directions import swamp_coordinates
 
 
 def random_enemy():
@@ -24,6 +25,7 @@ def random_enemy():
 def battle_loop(player, enemy):
     while True:
         print(f'What will {player.name} do?\n')
+        # print(f'Coordinates: {swamp_coordinates.grid[0][0]}')
         selection = int(input(
             '''1 - Attack!\n2 - Check stats\n3 - Go Back\n4 - Quit\n'''))
 
@@ -44,8 +46,15 @@ def battle_loop(player, enemy):
                     return False, player
             else:
                 os.system('cls')
-                print(f'The {enemy.name} is defeated!')
+                print(f'The {enemy.name} is defeated!\n')
+                # print(f'Coordinates: {swamp_coordinates.grid[0][1]}')
                 return True, player
+        elif selection == 2:
+            os.system('cls')
+            print('Here are the stats:\n\n')
+            print(f'You:              {enemy.name}\n\nHealth: {player.health}       {enemy.max_enemy_health}')
+            input("\n\nClose?")
+            os.system('cls')
         elif selection == 4:
             print('Bye\n')
             break

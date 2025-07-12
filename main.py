@@ -2,11 +2,6 @@ import os
 from phases import start, swamp
 
 # INITIALIZE CHARACTER
-
-
-def do_stuff(num):
-    return num + 5
-
 os.system('cls')
 player = start.initialiationLoop(start.setPlayerName())
 
@@ -19,11 +14,7 @@ else:
 print("Done!!")
 
 # start sawmp loop
-# START LOOP METHOD ( player as argument)
-# isRunning Boolean
-# Initial position variables
 # Call swampOptions with "start" and position variables
-# Loop while "isRunning"
 
 # END OF ORIGINAL
 # PLANS
