@@ -1,19 +1,43 @@
 import os
-import random
 from Player import Player
-# from utility import swamp_functions
+from directions import nav_options, swamp_coordinates
 from utility.battle_functions import battle_launch
+from utility.nav_functions import navigation_options
 
 
 def swamp_loop(player: Player):
     is_running = True
-    nav_coord = {
-        "x_val": 0,
-        "y_val": 0
-    }
+    moving_coords = [2, 1]
 
     while is_running:
-        if battle_launch(player):
-            continue
+        os.system('cls')
+        print(f'Moving coords: {moving_coords}')
+        location = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]
+
+        if location['random_battle']:
+            if battle_launch(player) == False:
+                is_running: False
+                break
+
+        print(location["description"])
+
+        text_options = ''
+        choice_options = []
+        for option in location["options"]:
+            text_options = text_options + nav_options.nav_options[option]
+            choice_options.append(option)
+
+        print(f'Options: {choice_options}')
+        choice = input(text_options)
+    
+        if choice:
+            if int(choice):
+                int_choice = int(choice)
+            else:
+                print('Enter a valid option')
+                continue
         else:
-            break
+            print('Enter a valid option')
+            continue
+
+        navigation_options(int_choice, choice_options, moving_coords)
