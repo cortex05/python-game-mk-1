@@ -10,6 +10,9 @@ while True:
     print(f'Moving coords: {moving_coords}')
     location = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]
     print(location["description"])
+
+    
+
     text_options = ''
     choice_options = []
     for option in location["options"]:
@@ -18,6 +21,7 @@ while True:
 
     print(f'Options: {choice_options}')
     choice = input(text_options)
+    
     if choice:
         if int(choice):
             int_choice = int(choice)
