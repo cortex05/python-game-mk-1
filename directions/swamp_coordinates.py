@@ -18,7 +18,7 @@ grid = [
             'random_battle': False,
             'options': [0, 1]
         }, {
-            'description': 'To the Northeast you see a shed, to the west you see something shiny. Where will you go?\n',
+            'description': 'To the Northwest you see a shed, to the west you see something shiny. Where will you go?\n',
             'random_battle': True,
             'options': [1, 3]
         }, {

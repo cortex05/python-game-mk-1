@@ -39,18 +39,22 @@ def battle_loop(player, enemy):
                     print('You stand strong.\n\n')
                 else:
                     print('You are defeated!')
-                    return False, player
+                    return 'LOSE', player
             else:
                 os.system('cls')
                 print(f'The {enemy.name} is defeated!\n')
                 # print(f'Coordinates: {swamp_coordinates.grid[0][1]}')
-                return True, player
+                return "WIN", player
         elif selection == 2:
             os.system('cls')
             print('Here are the stats:\n\n')
             print(f'You:              {enemy.name}\n\nHealth: {player.health}       {enemy.max_enemy_health}')
             input("\n\nClose?")
             os.system('cls')
+        elif selection == 3:
+            os.system('cls')
+            print('You retreat!')
+            return "RETREAT", player    
         elif selection == 4:
             print('Bye\n')
             break
@@ -62,13 +66,18 @@ def battle_launch(player):
     enemy = random_enemy()
     print(f'{enemy.name_tense} appeared!\n')
 
-    result, player = battle_loop(player, enemy)
+    result, player = battle_loop(player, enemy) 
 
-    if result:
+    if result == 'WIN':
         print('You won!\n\n')
         print(f'Your health is {player.health}')
         input('Press anything to continue')
         os.system('cls')
-        return True
-    else:
-        return False
+        return 'WIN'
+    elif result == 'RETREAT':
+        # if they retreat,
+        print("in the retreat")
+        return 'RETREAT'
+    elif result == 'LOSE':
+        return 'LOSE'
+    
