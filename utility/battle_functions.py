@@ -44,6 +44,8 @@ def battle_loop(player, enemy):
                 os.system('cls')
                 print(f'The {enemy.name} is defeated!\n')
                 # print(f'Coordinates: {swamp_coordinates.grid[0][1]}')
+
+                # LLevel up here? YES
                 return "WIN", player
         elif selection == 2:
             os.system('cls')
@@ -62,7 +64,7 @@ def battle_loop(player, enemy):
             print('')
  
 
-def battle_launch(player):
+def battle_launch(player, unlock_value):
     enemy = random_enemy()
     print(f'{enemy.name_tense} appeared!\n')
 
@@ -71,6 +73,13 @@ def battle_launch(player):
     if result == 'WIN':
         print('You won!\n\n')
         print(f'Your health is {player.health}')
+
+        if unlock_value != None:
+            print(f'The {enemy.name} was the gurard to the castle gate!\n\n')
+            print(f'Now you can access it\n')
+            print(f'Go back and find the entrance\n')
+            player.inventory.append(unlock_value)
+
         input('Press anything to continue')
         os.system('cls')
         return 'WIN'

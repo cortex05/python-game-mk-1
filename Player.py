@@ -8,3 +8,6 @@ class Player:
     health_potion_heal_amount = 30
     health_potion_drop_chance = 50  # 50 Percent chance to drop a health potion
     # levelUpChance = 50 - Don't know about this...
+    inventory = [
+        
+    ]

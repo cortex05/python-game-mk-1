@@ -14,10 +14,15 @@ def swamp_loop(player: Player):
         os.system('cls')
         print(f'Last command: {last_command}')
         print(f'Moving coords: {moving_coords}')
-        location = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]
+        holder = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]
+
+        if 'alt_pathway' in holder and holder['alt_pathway'] and player.inventory and 'CASTLE_GATE' in player.inventory:
+            location = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]['alt_pathway']
+        else:
+            location = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]
 
         if location['random_battle']:
-            result = battle_launch(player)
+            result = battle_launch(player, location['unlock_value'])
             if result == 'LOSE':
                 is_running: False
                 break
@@ -44,6 +49,7 @@ def swamp_loop(player: Player):
                 continue
         else:
             print('Enter a valid option')
+            # Need validation for bad input to NOT do random encounter again.
             continue
 
         last_command = navigation_options(int_choice, choice_options, moving_coords)
