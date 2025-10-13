@@ -27,7 +27,8 @@ grid = [
             'unlock_value': None,
             'block_value': 'CASTLE_GATE',
             'alt_pathway': {
-              'description': 'As you insert and twist your key into the slot, the earth rumbles \n You step back as the bridge comes crashing down. You now have a way to cross the bridge! WHat will you do?\n',
+              'alt_description': 'As you insert and twist your key into the slot, the earth rumbles \n You step back as the bridge comes crashing down. You now have a way to cross the bridge! What will you do?\n',
+              'description': 'You now have a way to cross the bridge! What will you do?\n',
               'random_battle': False,
               'options': [0, 1, 3],
               'unlock_value': None,

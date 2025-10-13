@@ -6,7 +6,7 @@ os.system('cls')
 player = start.initialiationLoop(start.setPlayerName())
 
 if player:
-    start.introScroll(player.name)
+    start.introScroll(player.name) 
     swamp.swamp_loop(player)
 else:
     print('end')

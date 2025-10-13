@@ -9,6 +9,8 @@ def swamp_loop(player: Player):
     is_running = True
     moving_coords = [2, 1]
     last_command = None
+    bridge_unlock = False
+    first_unlock = True
 
     while is_running:
         os.system('cls')
@@ -17,7 +19,9 @@ def swamp_loop(player: Player):
         holder = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]
 
         if 'alt_pathway' in holder and holder['alt_pathway'] and player.inventory and 'CASTLE_GATE' in player.inventory:
+            # condition check for if text has gone?
             location = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]['alt_pathway']
+            bridge_unlock = True
         else:
             location = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]
 
@@ -30,7 +34,12 @@ def swamp_loop(player: Player):
                 reverse_step(last_command, moving_coords)
                 continue
 
-        print(location["description"])
+        if bridge_unlock and first_unlock:
+            print(location['alt_description'])
+            first_unlock = False
+        else:
+            print(location['description'])
+        
 
         text_options = ''
         choice_options = []
