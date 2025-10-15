@@ -25,6 +25,11 @@ def swamp_loop(player: Player):
         else:
             location = swamp_coordinates.grid[moving_coords[0]][moving_coords[1]]
 
+        if location['unlock_value'] == 'VICTORY':
+            print(location['description'])
+            print('Thank you for playing!')
+            break
+
         if location['random_battle']:
             result = battle_launch(player, location['unlock_value'])
             if result == 'LOSE':

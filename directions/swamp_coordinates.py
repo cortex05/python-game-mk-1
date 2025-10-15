@@ -6,10 +6,10 @@ grid = [
             'options': [2],
             'unlock_value': 'CASTLE_GATE'
         }, {
-            'description': 'This is the castle, but you aren\'t supposed to be here yet.\n',
+            'description': '\n\nThis is the castle! You win!\n',
             'random_battle': False,
             'options': [0, 2],
-            'unlock_value': None
+            'unlock_value': 'VICTORY'
         }, {
             'description': "HOLDER",
             'options': []

@@ -36,7 +36,9 @@ def battle_loop(player, enemy):
 
                 if player.health - enemy_damage > 0:
                     player.health = player.health - enemy_damage
-                    print('You stand strong.\n\n')
+                    # print('You stand strong.\n\n')
+                    input('You stand strong \n')
+                    os.system('cls')
                 else:
                     print('You are defeated!')
                     return 'LOSE', player
@@ -75,9 +77,9 @@ def battle_launch(player, unlock_value):
         print(f'Your health is {player.health}')
 
         if unlock_value != None:
-            print(f'The {enemy.name} was the gurard to the castle gate!\n\n')
-            print(f'Now you can access it\n')
-            print(f'Go back and find the entrance\n')
+            print(f'The {enemy.name} was the guard to the castle gate!\n\n')
+            print(f'{enemy.name_tense} dropped a key to the drawbridge!\n')
+            print(f'Go back and find the entrance!\n')
             player.inventory.append(unlock_value)
 
         input('Press anything to continue')
